@@ -11,18 +11,14 @@ A simple attributes loader for PHP projects.
 ## Features
 
 - Load and manage PHP attributes easily
-- Composer integration
 - Custom PHP token parser
 - Simple and intuitive API
-- Complete tests with PHPUnit
-
-Un lecteur d'attributs simple et efficace pour les projets PHP 8.1+.
 
 ## Installation
 
 Use Composer to install:
 
-PHP 8.1 or higher
+PHP 8.2 or higher
 ```bash
 composer require willy68/pg-attributes
 ```
