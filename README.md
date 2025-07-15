@@ -23,9 +23,10 @@ PHP 8.2 or higher
 composer require willy68/pg-attributes
 ```
 ```php
+use koriym\Attributes\AttributeReader;
 use Pg\Attributes\AttributesReader;
 
-$loader = new AttributesReader();
+$loader = new AttributesReader(new AttributeReader());
 $attributes = $loader->getClassAttributes($reflectionClass, $attributeClassName);
 ```
 
