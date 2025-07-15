@@ -26,6 +26,25 @@ PHP;
         unlink($file);
     }
 
+    public function testFindClassWithSimpleClassNotStatic(): void
+    {
+        $code = <<<'PHP'
+<?php
+
+class TestClass {}
+PHP;
+
+        $file = tempnam(sys_get_temp_dir(), 'phpunit');
+        file_put_contents($file, $code);
+
+        $parser = new PhpTokenParser();
+
+        $result = $parser->findClass($file);
+        $this->assertEquals('\\TestClass', $result);
+
+        unlink($file);
+    }
+
     public function testFindClassWithNamespace(): void
     {
         $code = <<<'PHP'

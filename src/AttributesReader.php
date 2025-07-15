@@ -10,7 +10,7 @@ use ReflectionMethod;
 
 class AttributesReader
 {
-    public function __construct(private AttributeReader $reader)
+    public function __construct(private readonly AttributeReader $reader)
     {
     }
 
@@ -68,14 +68,8 @@ class AttributesReader
         return null;
     }
 
-    public function getReader(): BaseAttributeReader
+    public function getReader(): AttributeReader
     {
         return $this->reader;
-    }
-
-    public function setReader(BaseAttributeReader $reader): AttributesReader
-    {
-        $this->reader = $reader;
-        return $this;
     }
 }

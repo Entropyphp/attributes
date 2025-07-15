@@ -89,6 +89,12 @@ class AttributeReaderTest extends TestCase
         $this->assertCount(2, $result);
     }
 
+    public function testGetReader(): void
+    {
+        $reader = $this->attributeReader->getReader();
+        $this->assertInstanceOf(AttributeReader::class, $reader);
+    }
+
     protected function setUp(): void
     {
         $this->attributeReader = new AttributesReader(new AttributeReader());
