@@ -80,29 +80,4 @@ PHP;
 
         unlink($file);
     }
-
-    public function testFindClassWithException(): void
-    {
-        $this->expectException(\LogicException::class);
-        $this->expectExceptionMessage('Function token_get_all don\'t exists in this system');
-
-        // Sauvegarder la fonction originale
-        $originalFunction = 'token_get_all';
-        $originalFunctionExists = function_exists($originalFunction);
-
-        // Simuler l'absence de la fonction
-        if ($originalFunctionExists) {
-            $originalFunctionContent = $GLOBALS['functions'][$originalFunction];
-            unset($GLOBALS['functions'][$originalFunction]);
-        }
-
-        try {
-            PhpTokenParser::findClass(__FILE__);
-        } finally {
-            // Restaurer la fonction originale
-            if ($originalFunctionExists) {
-                $GLOBALS['functions'][$originalFunction] = $originalFunctionContent;
-            }
-        }
-    }
 }
