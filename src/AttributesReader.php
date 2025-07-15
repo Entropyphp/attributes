@@ -4,20 +4,13 @@ declare(strict_types=1);
 
 namespace Pg\Attributes;
 
-use koriym\Attributes\AttributeReader as BaseAttributeReader;
+use koriym\Attributes\AttributeReader;
 use ReflectionClass;
 use ReflectionMethod;
 
-class AttributeReader
+class AttributesReader
 {
-    public function __construct(private BaseAttributeReader $reader {
-        get {
-            return $this->reader;
-        }
-        set(BaseAttributeReader $value) {
-            $this->reader = $value;
-        }
-    })
+    public function __construct(private AttributeReader $reader)
     {
     }
 
@@ -73,5 +66,16 @@ class AttributeReader
             }
         }
         return null;
+    }
+
+    public function getReader(): BaseAttributeReader
+    {
+        return $this->reader;
+    }
+
+    public function setReader(BaseAttributeReader $reader): AttributesReader
+    {
+        $this->reader = $reader;
+        return $this;
     }
 }
