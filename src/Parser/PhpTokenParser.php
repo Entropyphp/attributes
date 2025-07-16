@@ -8,7 +8,6 @@ use LogicException;
 
 use function count;
 use function defined;
-use function function_exists;
 use function in_array;
 use function is_array;
 
@@ -23,20 +22,16 @@ class PhpTokenParser
     /**
      * Returns the full class name for the first class in the file.
      *
-     * @param string $file A PHP file path
+     * @param string $content to parse
      * @return string|false Full class name if found, false otherwise
-     * @throws LogicException
      */
-    public static function findClass(string $file): bool|string
+    public static function findClass(string $content): bool|string
     {
-        if (!function_exists('token_get_all')) {
-            throw new LogicException("Function token_get_all don't exists in this system");
-        }
 
         $class = false;
         $namespace = false;
         $doubleColon = false;
-        $tokens = token_get_all(file_get_contents($file));
+        $tokens = token_get_all($content);
 
         $nsToken = [T_NS_SEPARATOR, T_STRING];
         if (PHP_VERSION_ID >= 80000) {

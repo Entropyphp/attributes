@@ -17,13 +17,8 @@ class PhpTokenParserTest extends TestCase
 class TestClass {}
 PHP;
 
-        $file = tempnam(sys_get_temp_dir(), 'phpunit');
-        file_put_contents($file, $code);
-
-        $result = PhpTokenParser::findClass($file);
+        $result = PhpTokenParser::findClass($code);
         $this->assertEquals('\\TestClass', $result);
-
-        unlink($file);
     }
 
     public function testFindClassWithSimpleClassNotStatic(): void
@@ -34,15 +29,10 @@ PHP;
 class TestClass {}
 PHP;
 
-        $file = tempnam(sys_get_temp_dir(), 'phpunit');
-        file_put_contents($file, $code);
-
         $parser = new PhpTokenParser();
 
-        $result = $parser->findClass($file);
+        $result = $parser->findClass($code);
         $this->assertEquals('\\TestClass', $result);
-
-        unlink($file);
     }
 
     public function testFindClassWithNamespace(): void
@@ -55,13 +45,8 @@ namespace TestNamespace;
 class TestClass {}
 PHP;
 
-        $file = tempnam(sys_get_temp_dir(), 'phpunit');
-        file_put_contents($file, $code);
-
-        $result = PhpTokenParser::findClass($file);
+        $result = PhpTokenParser::findClass($code);
         $this->assertEquals('TestNamespace\TestClass', $result);
-
-        unlink($file);
     }
 
     public function testFindClassWithMultipleNamespaces(): void
@@ -74,13 +59,8 @@ namespace Test\Namespace\SubNamespace;
 class TestClass {}
 PHP;
 
-        $file = tempnam(sys_get_temp_dir(), 'phpunit');
-        file_put_contents($file, $code);
-
-        $result = PhpTokenParser::findClass($file);
+        $result = PhpTokenParser::findClass($code);
         $this->assertEquals('Test\Namespace\SubNamespace\TestClass', $result);
-
-        unlink($file);
     }
 
     public function testFindClassWithNoClass(): void
@@ -91,12 +71,7 @@ PHP;
 function testFunction() {}
 PHP;
 
-        $file = tempnam(sys_get_temp_dir(), 'phpunit');
-        file_put_contents($file, $code);
-
-        $result = PhpTokenParser::findClass($file);
+        $result = PhpTokenParser::findClass($code);
         $this->assertFalse($result);
-
-        unlink($file);
     }
 }
