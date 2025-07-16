@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Pg\Attributes\Parser;
 
-use LogicException;
-
 use function count;
 use function defined;
 use function in_array;
