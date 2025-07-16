@@ -49,6 +49,24 @@ PHP;
         $this->assertEquals('TestNamespace\TestClass', $result);
     }
 
+    public function testFindClassWithNamespaceAndDoubleColon(): void
+    {
+        $code = <<<'PHP'
+<?php
+
+namespace TestNamespace;
+
+use Pg\Attributes\Parser\PhpTokenParser;
+
+$parseFunc = PhpTokenParser::findClass; 
+
+class TestClass {}
+PHP;
+
+        $result = PhpTokenParser::findClass($code);
+        $this->assertEquals('TestNamespace\TestClass', $result);
+    }
+
     public function testFindClassWithMultipleNamespaces(): void
     {
         $code = <<<'PHP'
