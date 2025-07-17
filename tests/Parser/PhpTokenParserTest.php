@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pg\Tests\Parser;
+namespace PgTests\Attributes\Parser;
 
 use Pg\Attributes\Parser\PhpTokenParser;
 use PHPUnit\Framework\TestCase;

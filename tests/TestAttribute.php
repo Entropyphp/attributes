@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pg\Tests;
+namespace PgTests\Attributes;
 
 use Attribute;
 
