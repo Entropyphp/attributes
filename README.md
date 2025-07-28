@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D8.1-blue.svg)](https://php.net)
-[![Coverage Status](https://coveralls.io/repos/github/willy68/pg-attributes/badge.svg?branch=main)](https://coveralls.io/github/willy68/pg-attributes?branch=main)
-[![Continuous Integration](https://github.com/willy68/pg-attributes/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/willy68/pg-attributes/actions/workflows/ci.yml)
+[![Coverage Status](https://coveralls.io/repos/github/Entropyphp/attributes/badge.svg?branch=main)](https://coveralls.io/github/Entropyphp/attributes?branch=main)
+[![Continuous Integration](https://github.com/Entropyphp/attributes/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Entropyphp/attributes/actions/workflows/ci.yml)
 
 
 A simple attributes loader for PHP projects.
@@ -18,7 +18,7 @@ A simple attributes loader for PHP projects.
 
 Use Composer to install:
 
-PHP 8.2 or higher
+PHP 8.1 or higher
 ```bash
 composer require willy68/pg-attributes
 ```
