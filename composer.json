@@ -10,12 +10,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Pg\\Attributes\\": "src/"
+            "Entropy\\Attributes\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PgTests\\Attributes\\": "tests/"
+            "Entropy\\Tests\\Attributes\\": "tests/"
         }
     },
     "require": {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace PgTests\Attributes;
+namespace Entropy\Tests\Attributes;
 
 use Koriym\Attributes\AttributeReader;
-use Pg\Attributes\AttributesReader;
+use Entropy\Attributes\AttributesReader;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionException;

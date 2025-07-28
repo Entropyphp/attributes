@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Pg\Attributes\Parser;
+namespace Entropy\Attributes\Parser;
 
 use function count;
 use function defined;

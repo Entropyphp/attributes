@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace PgTests\Attributes\Parser;
+namespace Entropy\Tests\Attributes\Parser;
 
-use Pg\Attributes\Parser\PhpTokenParser;
+use Entropy\Attributes\Parser\PhpTokenParser;
 use PHPUnit\Framework\TestCase;
 
 class PhpTokenParserTest extends TestCase
